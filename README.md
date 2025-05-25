@@ -5,29 +5,24 @@
 <https://mirrors.iu13.net/blender/release/Blender4.4/blender-4.4.3-linux-x64.tar.xz>
 <https://hub.docker.com/repository/docker/jordantblakey/blender/general>
 <https://hub.docker.com/r/blendergrid/blender>
+<https://docs.blender.org/manual/en/latest/advanced/command_line/render.html>
+<https://nektosact.com/installation/gh.html>
 
-## Notes
-
-A simple docker container to run Blender in CI pipelines. May need to do this to get the most recent version.
+## Using Act to Debug Locally
 
 ```sh
-# docker run -it blender
 
-# optionally push the image to Docker Hub
-if [ "$1" == "push" ]; then
-  docker push jordantblakey/blender:latest
-  docker rmi -f $(docker images -q)
-  docker pull jordantblakey/blender:latest
-fi
+```
 
-# this skips CMD and RUN layers, don't use
-# docker run -it jordantblakey/blender /bin/bash
-# instead, run named container in background
-docker run --name blender jordantblakey/blender &
-# then start terminal inside it
-docker exec -it blender bash
+## Using blendergrid/blender container instead
 
-alias drmi "docker rmi (docker images -q)"
-alias dcr "docker container rm (docker container ls -q)"
+```sh
+# Alternatively, may be able to use this
+docker run blendergrid/blender --python-expr "print('howdy')"^C
+docker run blendergrid/blender -E CYCLES -f 1
+# Confirm the version of blender running inside the docker container (latest)
+docker run blendergrid/blender --version
+# Render to a persistent volume outside the container
+docker run -v $(pwd)/volume:/volume blendergrid/blender -E CYCLES -o volume/test_ -f 1
 
 ```
