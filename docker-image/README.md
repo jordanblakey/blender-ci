@@ -4,6 +4,9 @@ A simple docker container to run Blender in CI pipelines.
 
 Note: May not need to write this since blendergrid/blender container runs latest Blender.
 
+<https://mirrors.iu13.net/blender/release/Blender4.4/blender-4.4.3-linux-x64.tar.xz>
+<https://hub.docker.com/repository/docker/jordantblakey/blender/general>
+
 ```sh
 # docker run -it blender
 
