@@ -7,7 +7,8 @@ ENV BLENDER_VERSION=4.4.3
 RUN apt update && apt install -y --no-install-recommends \
   curl \
   ca-certificates \
-  jq
+  jq \
+  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 COPY ./scripts /app/scripts

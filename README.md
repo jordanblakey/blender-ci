@@ -6,6 +6,7 @@ A simple docker container to run Blender in CI pipelines.
 
 <https://mirrors.iu13.net/blender/release/Blender4.4/>
 <https://hub.docker.com/repository/docker/jordantblakey/blender/general>
+<https://hub.docker.com/r/blendergrid/blender>
 
 ## Notes
 
