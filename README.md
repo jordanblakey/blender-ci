@@ -12,7 +12,11 @@
 ## Using Act to Debug Locally
 
 ```sh
-curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
+# curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
+
+# use install script
+./install.sh
+act # run all workflows locally
 
 ```
 
