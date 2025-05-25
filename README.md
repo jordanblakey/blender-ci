@@ -2,7 +2,7 @@
 
 ## Links
 
-<https://mirrors.iu13.net/blender/release/Blender4.4/>
+<https://mirrors.iu13.net/blender/release/Blender4.4/blender-4.4.3-linux-x64.tar.xz>
 <https://hub.docker.com/repository/docker/jordantblakey/blender/general>
 <https://hub.docker.com/r/blendergrid/blender>
 
