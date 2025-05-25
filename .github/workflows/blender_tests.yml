@@ -1,0 +1,22 @@
+name: Blender Tests
+
+on:
+  push:
+    branches: [main] # Or your default branch
+  pull_request:
+    branches: [main] # Or your default branch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get blender container
+        run: echo "Pulling Blender container..." && \
+          docker pull blendergrid/blender
+
+      - name: Print version
+        run: docker run --rm blendergrid/blender --version
