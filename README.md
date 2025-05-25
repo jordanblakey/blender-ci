@@ -1,6 +1,4 @@
-# Blender in Docker
-
-A simple docker container to run Blender in CI pipelines.
+# Blender CI
 
 ## Links
 
@@ -9,6 +7,8 @@ A simple docker container to run Blender in CI pipelines.
 <https://hub.docker.com/r/blendergrid/blender>
 
 ## Notes
+
+A simple docker container to run Blender in CI pipelines. May need to do this to get the most recent version.
 
 ```sh
 # docker run -it blender
