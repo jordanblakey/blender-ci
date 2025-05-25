@@ -1,8 +1,10 @@
 # Blender CI
 
-## Links
+## Install
 
-## Using Act to Debug Github Actions Locally
+## Debug Github Actions Locally
+
+Using the `act` command it's possible to run Github Actions locally, for much faster feedback loops minimizing commits.
 
 <https://nektosact.com/installation/>
 <https://nektosact.com/installation/gh.html>
@@ -43,10 +45,12 @@ docker run -it --entrypoint /bin/bash blendergrid/blender
 # Note that blender is not on PATH, need to do this:
 #: root@ee4d02de2b09:/# /usr/local/blender/blender --background
 # Blender 4.4.3 (hash 802179c51ccc built 2025-04-29 15:12:13)
-# map a volume and run a python script in blender like this. you could use this
-# to render using the containerized Blender
+# map a volume and run a python script in blender like this.
+# you could use this to render using the containerized Blender
 docker run \
   -v $(pwd)/volume:/volume \
   blendergrid/blender \
   -P /volume/system-under-test/test/script.py
+# volumes can be used to share files between jobs in the runner container
+https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
 ```

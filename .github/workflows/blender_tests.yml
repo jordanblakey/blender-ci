@@ -12,6 +12,8 @@ jobs:
     container:
       image: docker.io/blendergrid/blender:latest
       options: --user root
+      volumes:
+        - /tmp:/tmp
 
     steps:
       - name: Inspect environment
@@ -31,4 +33,4 @@ jobs:
       - name: Run tests
         run: |
           echo "Running tests in Blender..."
-          blender --background -P volume/system-under-test/tests/run_tests.py
+          blender -b -P system-under-test/tests/run_tests.py
