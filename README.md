@@ -7,10 +7,12 @@
 <https://hub.docker.com/r/blendergrid/blender>
 <https://docs.blender.org/manual/en/latest/advanced/command_line/render.html>
 <https://nektosact.com/installation/gh.html>
+<https://nektosact.com/installation/index.html>
 
 ## Using Act to Debug Locally
 
 ```sh
+curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
 
 ```
 

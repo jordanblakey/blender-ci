@@ -11,15 +11,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Say hello
+        run: echo "Hello, world!"
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Verify Docker installation
-        run: docker --version && docker info
+      # - name: Install Act dependencies
+      #   if: ${{ env.ACT }}
+      #   run: |
+      #     apt-get update && apt-get install sudo -y
 
-      - name: Get blender container
-        run: echo "Pulling Blender container..." && \
-          docker pull blendergrid/blender
+      # - name: Verify Docker installation
+      #   run: docker --version && docker info
 
-      - name: Print version
-        run: docker run --rm blendergrid/blender --version
+      # - name: Get blender container
+      #   run: echo "Pulling Blender container..." && \
+      #     docker pull blendergrid/blender
+
+      # - name: Print version
+      #   run: docker run --rm blendergrid/blender --version
