@@ -6,6 +6,7 @@
 
 <https://nektosact.com/installation/>
 <https://nektosact.com/installation/gh.html>
+<https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs>
 
 ```sh
 # use install script to install Docker Engine and act
@@ -42,4 +43,10 @@ docker run -it --entrypoint /bin/bash blendergrid/blender
 # Note that blender is not on PATH, need to do this:
 #: root@ee4d02de2b09:/# /usr/local/blender/blender --background
 # Blender 4.4.3 (hash 802179c51ccc built 2025-04-29 15:12:13)
+# map a volume and run a python script in blender like this. you could use this
+# to render using the containerized Blender
+docker run \
+  -v $(pwd)/volume:/volume \
+  blendergrid/blender \
+  -P /volume/system-under-test/test/script.py
 ```

@@ -14,15 +14,21 @@ jobs:
       options: --user root
 
     steps:
-      - name: Check blendergrid container and add blender to PATH
+      - name: Inspect environment
         run: |
-          echo "Running in container: $(cat /etc/issue | head -n 1 | cut -d ' ' -f 1)"
+          # print environment information
+          echo "Distribution: $(cat /etc/issue | head -n 1 | cut -d ' ' -f 1-3)"
+          echo "User: $(whoami):$(groups)"
+
+          # symlink `blender` command
           ln -s /usr/local/blender/blender /usr/bin/blender
           echo "Blender version: $(blender --background --quiet)"
+          blender -b -q --python-expr "import bpy; print(f'Python in Blender: {bpy}')"
 
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Check that running python in blender works
+      - name: Run tests
         run: |
-          blender --background --python-expr "import bpy; print(f'hello from python in blender: {bpy.app.version_string}')"
+          echo "Running tests in Blender..."
+          blender --background -P volume/system-under-test/tests/run_tests.py
