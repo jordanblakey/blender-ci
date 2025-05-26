@@ -6,9 +6,10 @@
 
 Using the `act` command it's possible to run Github Actions locally, for much faster feedback loops minimizing commits.
 
-<https://nektosact.com/installation/>
-<https://nektosact.com/installation/gh.html>
-<https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs>
+https://github.com/actions/runner-images
+https://nektosact.com/installation/
+https://nektosact.com/installation/gh.html
+https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs
 
 ```sh
 # use install script to install Docker Engine and act
@@ -29,8 +30,10 @@ gh act --list
 
 ## Using containerized Blender (blendergrid/blender:latest)
 
-<https://hub.docker.com/r/blendergrid/blender>
-<https://docs.blender.org/manual/en/latest/advanced/command_line/render.html>
+Anything that can be done with `blender --background` can probably be done with containerized Blender -- particularly unit tests. Github Actions can pull the container in ~15s.
+
+https://hub.docker.com/r/blendergrid/blender
+https://docs.blender.org/manual/en/latest/advanced/command_line/render.html
 
 ```sh
 # Command flags work as with `blender`

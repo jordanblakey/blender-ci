@@ -12,8 +12,6 @@ jobs:
     container:
       image: docker.io/blendergrid/blender:latest
       options: --user root
-      volumes:
-        - /tmp:/tmp
 
     steps:
       - name: Inspect environment
